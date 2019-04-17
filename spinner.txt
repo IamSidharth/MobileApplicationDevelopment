@@ -1,0 +1,7 @@
+Spinner spn=findViewById(R.id.spn);
+        ArrayList<String> l= new ArrayList<>();
+        l.add("!()%*^");
+        l.add("((*^");
+
+        ArrayAdapter<String> adt= new ArrayAdapter<>(this,android.R.layout.simple_dropdown_item_1line,l);
+        spn.setAdapter(adt);

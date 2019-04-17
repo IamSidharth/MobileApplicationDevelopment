@@ -1,0 +1,24 @@
+ ArrayList<String> arr=new ArrayList<String>();
+        arr.add("a");
+        arr.add("b");
+        arr.add("c");
+        ArrayAdapter arrayAdapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item, arr);
+        Spinner spinner = (Spinner) findViewById(R.id.spinn);
+        spinner.setAdapter(arrayAdapter);
+
+        datePicker = (DatePicker) findViewById(R.id.datePicker);
+
+        Calendar c = Calendar.getInstance();
+        Integer i=Calendar.YEAR;
+        datePicker.updateDate(c.get(Calendar.YEAR),c.get(Calendar.MONTH),c.get(Calendar.DAY_OF_MONTH));
+        Toast.makeText(this, i.toString(), Toast.LENGTH_SHORT).show();
+    }
+
+    public void func(View view)
+    {
+        String s1 = Integer.toString(datePicker.getYear()) + " ";
+        String s2 = Integer.toString(datePicker.getMonth()+1) + " ";
+        String s3 = Integer.toString(datePicker.getDayOfMonth());
+
+        Toast.makeText(this, s1 + s2 + s3, Toast.LENGTH_SHORT).show();
+    }
